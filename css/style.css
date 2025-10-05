@@ -80,3 +80,35 @@ nav a:hover {
 .container a:hover {
     text-decoration: underline;
 }
+
+/* Navigation Styles */
+nav {
+    background: #2c3e50;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Quick Links Styling */
+.container a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
