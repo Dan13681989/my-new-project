@@ -66,3 +66,5 @@ class ThemeManager {
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
 });
+
+console.log('Dark mode script loaded successfully!');
