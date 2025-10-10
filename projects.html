@@ -7,35 +7,109 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav style="background: #2c3e50; padding: 15px; text-align: center;">
-        <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Home</a>
-        <a href="about.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">About</a>
-        <a href="projects.html" style="color: white; margin: 0 15px; text-decoration: none; font-weight: bold;">Projects</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <div class="container">
         <h1>My Projects</h1>
+        <p>Here are some of the projects I've worked on. Filter by technology to see specific work.</p>
         
-        <div class="project">
-            <h3>cleanmac</h3>
-            <p>Comprehensive macOS cleanup and automation scripts</p>
-            <a href="https://github.com/Dan13681989/cleanmac">View on GitHub</a>
+        <!-- Project Filters -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" data-filter="css">CSS</button>
         </div>
 
-        <div class="project">
-            <h3>iPhone-Config</h3>
-            <p>Enterprise-grade sync system with Docker automation</p>
-            <a href="https://github.com/Dan13681989/iPhone-Config">View on GitHub</a>
-        </div>
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="web css">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive portfolio website built with HTML5 and CSS3.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="project">
-            <h3>ULOS-FullFunctional</h3>
-            <p>Open modular OS with advanced features</p>
-            <a href="https://github.com/Dan13681989/ULOS-FullFunctional">View on GitHub</a>
-        </div>
+            <!-- Project 2 -->
+            <div class="project-card" data-category="web javascript">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Task Manager App</h3>
+                    <p>A JavaScript task management application with local storage.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">Web App</span>
+                    </div>
+                </div>
+            </div>
 
-        <p><a href="index.html">← Back to Home</a></p>
+            <!-- Project 3 -->
+            <div class="project-card" data-category="javascript">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Weather Dashboard</h3>
+                    <p>Real-time weather application using API integration.</p>
+                    <div class="project-tags">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">API</span>
+                        <span class="tag">Async/Await</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-category="css web">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link">View Project</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>CSS Animation Library</h3>
+                    <p>A collection of reusable CSS animations and effects.</p>
+                    <div class="project-tags">
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Animations</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="js/projects.js"></script>
 </body>
 </html>
