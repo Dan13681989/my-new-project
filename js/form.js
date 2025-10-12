@@ -6,10 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = this.querySelector('input[name="name"]').value.trim();
-            const email = this.querySelector('input[name="email"]').value.trim();
-            const message = this.querySelector('textarea[name="message"]').value.trim();
+            // Get form values using FormData (more reliable)
+            const formData = new FormData(this);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const message = formData.get('message').trim();
             
             // Validate form
             if (!name || !email || !message) {
@@ -28,13 +29,17 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // Simulate form submission
+            // Real form submission simulation
+            // This can later be replaced with Formspree or other service
+            console.log('Form submission:', { name, email, message });
+            
+            // Simulate API call
             setTimeout(() => {
                 showNotification('Message sent successfully! I will get back to you soon.', 'success');
                 this.reset();
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-            }, 2000);
+            }, 1500);
         });
     }
     
