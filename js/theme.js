@@ -76,7 +76,7 @@ function scrollToContact() {
 
 // Crypto payment addresses - UPDATE THESE WITH YOUR REAL ADDRESSES!
 const cryptoAddresses = {
-    hbar: "0.0.YOUR_HBAR_ADDRESS_HERE",
+    hbar: "0.0.YOUR_REAL_HBAR_ADDRESS",
     btc: "bc1qyourbitcoinaddresshere",
     eth: "0xYourEthereumAddressHere",
     sol: "YourSolanaAddressHere"
@@ -107,7 +107,7 @@ function copyCryptoAddress(currency) {
     }
     document.body.removeChild(textArea);
 }
-const cryptoAddresses = { hbar: "0.0.YOUR_HBAR_ADDRESS_HERE" };
+const cryptoAddresses = { hbar: "0.0.YOUR_REAL_HBAR_ADDRESS" };
 function copyCryptoAddress(currency) {
     const address = cryptoAddresses[currency];
     if (address.includes('YOUR_')) {
