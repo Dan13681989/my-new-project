@@ -84,27 +84,6 @@ const cryptoAddresses = {
 };
 
 // Copy crypto address to clipboard
-function copyCryptoAddress(currency) {
-    const address = cryptoAddresses[currency];
-    
-    }
-
-    // Create a temporary textarea element to copy text:cite[3]
-    const textArea = document.createElement("textarea");
-    textArea.value = address;
-    document.body.appendChild(textArea);
-    textArea.select();
-    
-    try {
-        // Try to copy to clipboard:cite[3]
-        document.execCommand("copy");
-        alert(`✅ ${currency.toUpperCase()} address copied!\n\nSend the exact amount and email your Transaction ID.`);
-    } catch (err) {
-        // Fallback if copy fails
-        prompt(`📋 Please copy this ${currency.toUpperCase()} address manually:`, address);
-    }
-    document.body.removeChild(textArea);
-}
     const textArea = document.createElement("textarea");
     textArea.value = address;
     document.body.appendChild(textArea);
@@ -119,3 +98,26 @@ function copyCryptoAddress(currency) {
 }
 
 // Multi-crypto addresses - UPDATE WITH YOUR REAL ADDRESSES!
+function copyCryptoAddress(currency) {
+    const address = cryptoAddresses[currency];
+    if (!address) {
+        alert('Address not found for ' + currency);
+        return;
+    }
+    
+    // Create a temporary textarea element to copy text
+    const textArea = document.createElement("textarea");
+    textArea.value = address;
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        // Try to copy to clipboard
+        document.execCommand("copy");
+        alert(`✅ ${currency.toUpperCase()} address copied!\n\nSend the exact amount and email your Transaction ID.`);
+    } catch (err) {
+        // Fallback if copy fails
+        prompt(`📋 Please copy this ${currency.toUpperCase()} address manually:`, address);
+    }
+    document.body.removeChild(textArea);
+}
