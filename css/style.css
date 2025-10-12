@@ -830,3 +830,11 @@ footer {
 }
 
 /* Add more styles for icons, pricing, etc. */
+.crypto-payments { padding: 80px 0; background: var(--bg-primary); }
+.crypto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+.crypto-option { background: var(--bg-secondary); padding: 30px 25px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); }
+.crypto-option:hover { transform: translateY(-5px); }
+.crypto-icon { width: 80px; height: 80px; margin: 0 auto 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; }
+.crypto-icon.hbar { background: linear-gradient(135deg, #00aaff, #0088cc); }
+.crypto-price { margin: 25px 0; padding: 15px; background: var(--bg-primary); border-radius: 10px; }
+.crypto-price .amount { display: block; font-size: 1.4rem; font-weight: bold; color: var(--text-primary); }

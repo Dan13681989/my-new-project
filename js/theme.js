@@ -107,3 +107,22 @@ function copyCryptoAddress(currency) {
     }
     document.body.removeChild(textArea);
 }
+const cryptoAddresses = { hbar: "0.0.YOUR_HBAR_ADDRESS_HERE" };
+function copyCryptoAddress(currency) {
+    const address = cryptoAddresses[currency];
+    if (address.includes('YOUR_')) {
+        alert('Please update crypto addresses with your real wallet addresses!');
+        return;
+    }
+    const textArea = document.createElement("textarea");
+    textArea.value = address;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+        document.execCommand("copy");
+        alert(`✅ ${currency.toUpperCase()} address copied! Send payment and email transaction ID.`);
+    } catch (err) {
+        prompt(`Please copy this ${currency.toUpperCase()} address manually:`, address);
+    }
+    document.body.removeChild(textArea);
+}
