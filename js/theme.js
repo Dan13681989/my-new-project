@@ -73,3 +73,37 @@ console.log('Dark mode script loaded successfully!');
 function scrollToContact() {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
+
+// Crypto payment addresses - UPDATE THESE WITH YOUR REAL ADDRESSES!
+const cryptoAddresses = {
+    hbar: "0.0.YOUR_HBAR_ADDRESS_HERE",
+    btc: "bc1qyourbitcoinaddresshere",
+    eth: "0xYourEthereumAddressHere",
+    sol: "YourSolanaAddressHere"
+};
+
+// Copy crypto address to clipboard
+function copyCryptoAddress(currency) {
+    const address = cryptoAddresses[currency];
+    
+    if (address.includes('YOUR_') || address.includes('your') || address.includes('AddressHere')) {
+        alert('⚠️ Please update the crypto addresses in the code with your real wallet addresses first!');
+        return;
+    }
+
+    // Create a temporary textarea element to copy text:cite[3]
+    const textArea = document.createElement("textarea");
+    textArea.value = address;
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        // Try to copy to clipboard:cite[3]
+        document.execCommand("copy");
+        alert(`✅ ${currency.toUpperCase()} address copied!\n\nSend the exact amount and email your Transaction ID.`);
+    } catch (err) {
+        // Fallback if copy fails
+        prompt(`📋 Please copy this ${currency.toUpperCase()} address manually:`, address);
+    }
+    document.body.removeChild(textArea);
+}

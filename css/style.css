@@ -798,3 +798,35 @@ footer {
 .footer-links a:hover {
     color: var(--accent-color);
 }
+
+/* Crypto Payments Section Styles */
+.crypto-payments {
+    padding: 80px 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.crypto-option {
+    background: var(--bg-secondary);
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.crypto-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Add more styles for icons, pricing, etc. */
