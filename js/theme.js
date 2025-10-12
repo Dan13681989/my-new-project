@@ -87,9 +87,6 @@ const cryptoAddresses = {
 function copyCryptoAddress(currency) {
     const address = cryptoAddresses[currency];
     
-    if (address.includes('YOUR_') || address.includes('your') || address.includes('AddressHere')) {
-        alert('⚠️ Please update the crypto addresses in the code with your real wallet addresses first!');
-        return;
     }
 
     // Create a temporary textarea element to copy text:cite[3]
