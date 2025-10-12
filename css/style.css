@@ -838,3 +838,37 @@ footer {
 .crypto-icon.hbar { background: linear-gradient(135deg, #00aaff, #0088cc); }
 .crypto-price { margin: 25px 0; padding: 15px; background: var(--bg-primary); border-radius: 10px; }
 .crypto-price .amount { display: block; font-size: 1.4rem; font-weight: bold; color: var(--text-primary); }
+
+/* Complete Crypto Icons */
+.crypto-icon.btc { background: linear-gradient(135deg, #f7931a, #e07b00); }
+.crypto-icon.eth { background: linear-gradient(135deg, #627eea, #4661d3); }
+.crypto-icon.sol { background: linear-gradient(135deg, #00ffbd, #00cc96); }
+
+/* Crypto Option Hover Effects */
+.crypto-option.hbar:hover { border-left: 4px solid #00aaff; }
+.crypto-option.btc:hover { border-left: 4px solid #f7931a; }
+.crypto-option.eth:hover { border-left: 4px solid #627eea; }
+.crypto-option.sol:hover { border-left: 4px solid #00ffbd; }
+
+/* Payment Instructions Styling */
+.payment-instructions {
+    margin-top: 50px;
+    padding: 30px;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    border-left: 4px solid #00aaff;
+}
+
+.payment-instructions h4 {
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.payment-instructions ol {
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.payment-instructions li {
+    margin-bottom: 10px;
+}
