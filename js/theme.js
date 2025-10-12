@@ -76,6 +76,15 @@ function scrollToContact() {
 
 // Crypto payment addresses - UPDATE THESE WITH YOUR REAL ADDRESSES!
 // Multi-crypto addresses - UPDATE WITH YOUR REAL ADDRESSES!
+const cryptoAddresses = {
+    hbar: "0.0.10028376-hzant",
+    btc: "bc1qpv3lmmnxwpx8xxc2vgeh930dgtqcvpyu8xx2e5g8",
+    eth: "0xaC7fefDEdA697eB4846741971a2D34F8a607410d",
+    sol: "8R8jXo7o9KyUSnFLdRxE48FvYnT72uMRz7rYvnfubhmn"
+};
+
+// Copy crypto address to clipboard
+function copyCryptoAddress(currency) {
     const address = cryptoAddresses[currency];
     
     if (address.includes('YOUR_') || address.includes('your') || address.includes('AddressHere')) {
