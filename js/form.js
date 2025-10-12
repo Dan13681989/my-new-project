@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values using FormData (more reliable)
+            // Get form values
             const formData = new FormData(this);
             const name = formData.get('name').trim();
             const email = formData.get('email').trim();
@@ -29,17 +29,30 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.textContent = 'Sending...';
             submitButton.disabled = true;
             
-            // Real form submission simulation
-            // This can later be replaced with Formspree or other service
-            console.log('Form submission:', { name, email, message });
-            
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Message sent successfully! I will get back to you soon.', 'success');
-                this.reset();
+            // Real Formspree submission
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('Message sent successfully! I will get back to you soon.', 'success');
+                    this.reset();
+                } else {
+                    showNotification('There was a problem sending your message. Please try again.', 'error');
+                }
+            })
+            .catch(error => {
+                showNotification('There was a network error. Please check your connection and try again.', 'error');
+                console.error('Form submission error:', error);
+            })
+            .finally(() => {
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-            }, 1500);
+            });
         });
     }
     
