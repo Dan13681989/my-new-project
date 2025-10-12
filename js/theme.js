@@ -68,3 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('Dark mode script loaded successfully!');
+
+// Scroll to contact form function
+function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
